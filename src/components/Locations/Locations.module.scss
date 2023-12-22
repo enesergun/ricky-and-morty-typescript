@@ -1,0 +1,20 @@
+@import "@/styles";
+.locations {
+  /* my-4 sm:w-3/4 mx-auto */
+  margin: 1rem 0;
+  max-width: auto;
+  @include media-breakpoint-up(sm) {
+    width: 75%;
+  }
+  .locationsCardWrapper {
+    /* flex flex-col items-center gap-3 sm:flex-row sm:flex-wrap */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem; /* 12px */
+    @include media-breakpoint-up(sm) {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+}

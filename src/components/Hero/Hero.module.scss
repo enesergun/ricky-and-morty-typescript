@@ -1,0 +1,35 @@
+@import "@/styles";
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: $black;
+  padding: 1.75rem;
+  width: 100%;
+  gap: 1rem;
+  .heroText {
+    color: $white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    width: 75%;
+    .heroColoredText {
+      color: $turquoise;
+    }
+  }
+  .heroDescription {
+    color: $white;
+    font-size: 0.875rem; /* 14px */
+    line-height: 1.25rem; /* 20px */
+    width: 75%;
+  }
+}
+.jumplinks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* 8px */
+  width: 75%;
+  @include media-breakpoint-up(sm) {
+    flex-direction: row;
+  }
+}

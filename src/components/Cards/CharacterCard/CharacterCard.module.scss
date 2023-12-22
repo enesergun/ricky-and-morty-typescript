@@ -1,0 +1,36 @@
+@import "@/styles";
+.characterCard {
+  background: $zinc-800;
+  width: max-content;
+  padding: 1rem; /* 16px */
+  border-radius: 0.75rem; /* 12px */
+  cursor: pointer;
+  &:hover {
+    background: $zinc-600;
+  }
+  .characterCardImage {
+    border-radius: 0.75rem; /* 12px */
+  }
+  .characterCardTitle {
+    color: $white;
+    font-size: 0.875rem; /* 14px */
+    line-height: 1.25rem; /* 20px */
+    font-weight: 700;
+    margin: 05rem 0;
+  }
+  .characterCardInformation {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.75rem; /* 12px */
+    line-height: 1rem; /* 16px */
+    color: $white;
+  }
+  .characterCardInformationRow {
+    display: flex;
+    width: 40%;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.25rem; /* 4px */
+    margin-bottom: 0.25rem; /* 4px */
+  }
+}

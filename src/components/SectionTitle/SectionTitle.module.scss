@@ -1,0 +1,24 @@
+@import "@/styles";
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem; /* 12px */
+  @include media-breakpoint-up(sm) {
+    width: 13rem; /* 208px */
+  }
+  .sectionTitleHeader {
+    color: $white;
+    font-weight: 700;
+    font-size: 1.25rem; /* 20px */
+    line-height: 1.75rem; /* 28px */
+  }
+}
+.haveSeeAll {
+  justify-content: space-between;
+}
+.notHaveSeeAll {
+  justify-content: center;
+  @include media-breakpoint-up(sm) {
+    justify-content: start;
+  }
+}

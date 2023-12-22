@@ -1,0 +1,12 @@
+.informationCard {
+  /* py-4 */
+  padding: 1rem 0;
+  .informationCardTitle {
+    font-weight: 700;
+  }
+  .informationCardValue {
+    font-size: 0.875rem; /* 14px */
+    line-height: 1.25rem; /* 20px */
+    background: $zinc-300;
+  }
+}

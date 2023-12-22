@@ -1,0 +1,19 @@
+@import "@/styles";
+.episodesCard {
+  /* bg-zinc-800 w-[182px] p-4 rounded-xl text-white text-center text-sm flex items-center justify-between hover:bg-zinc-600 cursor-pointer */
+  background: $zinc-800;
+  width: 182px;
+  padding: 1rem; /* 16px */
+  border-radius: 0.75rem; /* 12px */
+  color: $white;
+  text-align: center;
+  font-size: 0.875rem; /* 14px */
+  line-height: 1.25rem; /* 20px */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  &:hover {
+    background: $zinc-600;
+  }
+}

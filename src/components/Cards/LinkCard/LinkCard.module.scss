@@ -1,0 +1,11 @@
+@import "@/styles";
+.linkCard {
+  cursor: pointer;
+  color: $white;
+  background: $zinc-600;
+  font-size: 0.875rem; /* 14px */
+  line-height: 1.25rem; /* 20px */
+  padding: 0.5rem; /* 8px */
+  border-radius: 0.75rem; /* 12px */
+  text-align: center;
+}
