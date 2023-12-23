@@ -1,12 +1,14 @@
+@import "@/styles";
 .informationCard {
   /* py-4 */
   padding: 1rem 0;
+  color: $white;
   .informationCardTitle {
     font-weight: 700;
   }
   .informationCardValue {
     font-size: 0.875rem; /* 14px */
     line-height: 1.25rem; /* 20px */
-    background: $zinc-300;
+    color: $zinc-300;
   }
 }

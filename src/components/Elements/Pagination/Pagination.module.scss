@@ -1,0 +1,55 @@
+@import "@/styles";
+.pagination {
+  margin: 1rem 0;
+  .paginationList {
+    width: max-content;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    height: 2rem; /* 32px */
+    font-size: 0.875rem; /* 14px */
+    line-height: 1.25rem; /* 20px */
+    background: $zinc-800;
+
+    .arrowButtons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 0.75rem;
+      height: 2rem; /* 32px */
+      margin-inline-start: 0px;
+      &:hover {
+        background: $zinc-600;
+      }
+      .rotate90deg {
+        transform: rotate(90deg);
+      }
+      .rotate270deg {
+        transform: rotate(270deg);
+      }
+    }
+  }
+  li {
+    list-style: none;
+  }
+}
+
+.paginationElement {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.75rem;
+  height: 2rem; /* 32px */
+  margin-inline-start: 0px;
+  line-height: 1.25;
+  color: $white;
+  &:hover {
+    background: $zinc-600;
+  }
+  li {
+    list-style: none;
+  }
+}
+.active {
+  background: $zinc-600;
+}

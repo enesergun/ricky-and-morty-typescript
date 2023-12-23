@@ -1,12 +1,11 @@
 @import "@/styles";
-.locations {
+.characters {
   margin: 1rem auto;
-  max-width: auto;
   @include media-breakpoint-up(sm) {
     width: 75%;
   }
-  .locationsCardWrapper {
-    
+  .characterCardWrapper {
+    /* flex flex-col items-center gap-3 sm:flex-row sm:flex-wrap */
     display: flex;
     flex-direction: column;
     align-items: center;
