@@ -1,0 +1,20 @@
+@import "@/styles";
+.characterInformation {
+  margin-top: 2rem; /* 32px */
+  width: 100%;
+  @include media-breakpoint-up(sm) {
+    width: 35%;
+  }
+  .characterInformationTitle {
+    font-size: 1.125rem; /* 18px */
+    line-height: 1.75rem; /* 28px */
+    font-weight: 500;
+    color: $zinc-400;
+  }
+  .characterInformationWrapper {
+    margin-top: 0.5rem; /* 8px */
+
+    max-height: 538px;
+    overflow: auto;
+  }
+}

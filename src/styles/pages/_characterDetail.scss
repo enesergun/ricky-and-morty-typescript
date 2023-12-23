@@ -1,0 +1,21 @@
+.characterDetail {
+  /* flex bg-zinc-700 min-h-screen flex-col items-center */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: $zinc-700;
+  min-height: 100vh;
+  &__image {
+    /* my-5 */
+    margin: 1.25rem 0;
+    border-radius: 0.75rem; /* 12px */
+  }
+  &__informationWrapper {
+    /* w-3/4 sm:flex sm:justify-around */
+    width: 75%;
+    @include media-breakpoint-up(sm) {
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+}
