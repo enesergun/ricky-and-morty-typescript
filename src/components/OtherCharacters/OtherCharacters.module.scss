@@ -1,21 +1,23 @@
 @import "@/styles";
-.characterInformation {
-  width: 100%;
+.otherCharacters {
+  margin-top: 2rem; /* 32px */
+  width: 75%;
   @include media-breakpoint-up(sm) {
-    width: 100%;
+    width: 75%;
   }
-  .characterInformationTitle {
+  .otherCharactersTitle {
     font-size: 1.125rem; /* 18px */
     line-height: 1.75rem; /* 28px */
     font-weight: 500;
     color: $zinc-400;
   }
-  .characterInformationWrapper {
+  .otherCharactersWrapper {
     margin-top: 0.5rem; /* 8px */
     display: flex;
     flex-wrap: wrap;
-    max-height: 538px;
-    overflow: auto;
+    /* max-height: 538px;
+    overflow: auto; */
+    gap: 2rem;
     .informationCard {
       width: 50%;
     }

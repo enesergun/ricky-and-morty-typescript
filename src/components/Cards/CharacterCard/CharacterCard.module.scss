@@ -5,9 +5,7 @@
   padding: 1rem; /* 16px */
   border-radius: 0.75rem; /* 12px */
   cursor: pointer;
-  &:hover {
-    background: $zinc-600;
-  }
+
   .favorite {
     position: absolute;
     .favoriteWrapper {

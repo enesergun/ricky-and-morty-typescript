@@ -1,0 +1,47 @@
+@import "@/styles";
+.summaryCharacterCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  color: $white;
+  width: 100%;
+  min-width: 304px;
+  max-width: 324px;
+  @include media-breakpoint-up(sm) {
+    width: 45%;
+  }
+  @include media-breakpoint-up(md) {
+    width: 45%;
+  }
+  @include media-breakpoint-up(lg) {
+    width: 30%;
+  }
+  .characterHeader {
+    display: flex;
+    gap: 1rem;
+  }
+  .characterCardImage {
+    border-radius: 50%;
+  }
+  .characterTitleWrapper {
+    .characterName {
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+    }
+    .characterPlanet {
+      font-size: 1rem;
+      line-height: 1.5rem;
+      color: $zinc-300;
+    }
+    .characterQualification {
+      font-size: 0.75rem;
+      line-height: 1rem;
+      color: $zinc-300;
+      font-style: italic;
+    }
+  }
+  & svg {
+    transform: rotate(-90deg);
+  }
+}

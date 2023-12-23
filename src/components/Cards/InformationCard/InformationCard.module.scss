@@ -3,7 +3,7 @@
   /* py-4 */
   padding: 1rem 0;
   color: $white;
-  
+
   .informationCardTitle {
     font-weight: 700;
   }
@@ -12,4 +12,7 @@
     line-height: 1.25rem; /* 20px */
     color: $zinc-300;
   }
+}
+.percentage50Width {
+  width: 50%;
 }

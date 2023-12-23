@@ -13,15 +13,36 @@ const CharacterInformation: React.FC<CharacterInformationProps> = ({
     <div className={cn(style.characterInformation)}>
       <div className={cn(style.characterInformationTitle)}>{title}</div>
       <div className={cn(style.characterInformationWrapper)}>
-        <InformationCard title={"Test"} value={"test"} />
-        <InformationCard title={"Test"} value={"test"} />
-        <InformationCard title={"Test"} value={"test"} />
-        <InformationCard title={"Test"} value={"test"} />
-        <InformationCard title={"Test"} value={"test"} />
-        <InformationCard title={"Test"} value={"test"} />
-        <InformationCard title={"Test"} value={"test"} />
-        <InformationCard title={"Test"} value={"test"} />
-        <InformationCard title={"Test"} value={"test"} />
+        <InformationCard
+          title={"Test"}
+          value={"test"}
+          percentage50Width={true}
+        />
+        <InformationCard
+          title={"Test"}
+          value={"test"}
+          percentage50Width={true}
+        />
+        <InformationCard
+          title={"Test"}
+          value={"test"}
+          percentage50Width={true}
+        />
+        <InformationCard
+          title={"Test"}
+          value={"test"}
+          percentage50Width={true}
+        />
+        <InformationCard
+          title={"Test"}
+          value={"test"}
+          percentage50Width={true}
+        />
+        <InformationCard
+          title={"Test"}
+          value={"test"}
+          percentage50Width={true}
+        />
       </div>
     </div>
   );

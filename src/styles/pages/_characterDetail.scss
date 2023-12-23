@@ -15,7 +15,11 @@
     width: 75%;
     @include media-breakpoint-up(sm) {
       display: flex;
-      justify-content: space-around;
+      justify-content: center;
+      gap: 2rem;
     }
+  }
+  &__informationContainer {
+    margin: 1.25rem 0;
   }
 }
