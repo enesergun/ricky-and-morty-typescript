@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import SectionTitle from "@/components/SectionTitle";
 import CharacterInformation from "@/components/CharacterInformation";
 import OtherCharacters from "@/components/OtherCharacters";
 
@@ -20,7 +19,7 @@ const CharacterDetail = () => {
         />
 
         <div className={cn("characterDetail__informationContainer")}>
-          <DetailTitle title="Rick Sanchez" />
+          <DetailTitle title="Rick Sanchez" favorite={true} />
           <CharacterInformation title="Informations" />
         </div>
       </div>
