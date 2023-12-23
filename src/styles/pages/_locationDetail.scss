@@ -1,15 +1,14 @@
 .locationDetail {
-  /* flex bg-zinc-700 min-h-screen flex-col items-center  ${inter.className} */
   display: flex;
   flex-direction: column;
   align-items: center;
   background: $zinc-700;
   min-height: 100vh;
   &__informationWrapper {
-    /* flex w-3/4 justify-between sm:justify-center sm:gap-28 */
     display: flex;
     width: 75%;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 7rem;
     @include media-breakpoint-up(sm) {
       justify-content: center;
       gap: 7rem; /* 112px */

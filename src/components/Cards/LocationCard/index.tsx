@@ -9,15 +9,15 @@ interface PlanetProps {
 
 const LocationCard: React.FC = () => {
   return (
-    <div className={cn(styles.locationCard)}>
-      <Link href="/locations/2">
+    <Link href="/locations/2">
+      <div className={cn(styles.locationCard)}>
         <div className={cn(styles.locationCardIcon)}>
           <Planet size={48} />
         </div>
         <div>Planet</div>
         <div>Earth</div>
-      </Link>
-    </div>
+      </div>
+    </Link>
   );
 };
 

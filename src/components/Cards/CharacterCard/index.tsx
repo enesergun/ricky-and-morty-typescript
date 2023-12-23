@@ -1,18 +1,28 @@
 import React from "react";
 import Image from "next/image";
-import { Pulse, Skull, Alien, Planet } from "@/constants/icons";
+import { Pulse, Skull, Alien, Planet, Heart } from "@/constants/icons";
 import Link from "next/link";
 import styles from "./CharacterCard.module.scss";
 import cn from "classnames";
 
 const CharacterCard = () => {
+  const handleAddFavorite = () => {
+    //
+  };
   return (
-    <div className={cn(styles.characterCard)}>
+    <div className={cn(styles.characterCard, "characterCardContainer")}>
+      <div className={cn(styles.favorite)}>
+        <div className={cn(styles.favoriteWrapper)}>
+          <span onClick={() => handleAddFavorite()}>
+            <Heart color="transparent" />
+          </span>
+        </div>
+      </div>
       <Link href="/characters/1">
         <Image
           className={cn(styles.characterCardImage)}
           src="https://rickandmortyapi.com/api/character/avatar/12.jpeg"
-          width={150}
+          width={250}
           height={150}
           alt="Character Image"
         />

@@ -2,10 +2,9 @@
 .sectionTitle {
   display: flex;
   align-items: center;
+  justify-content: center;
   margin-bottom: 0.75rem; /* 12px */
-  @include media-breakpoint-up(sm) {
-    width: 13rem; /* 208px */
-  }
+  width: 100%;
   .sectionTitleHeader {
     color: $white;
     font-weight: 700;
@@ -13,12 +12,4 @@
     line-height: 1.75rem; /* 28px */
   }
 }
-.haveSeeAll {
-  justify-content: space-between;
-}
-.notHaveSeeAll {
-  justify-content: center;
-  @include media-breakpoint-up(sm) {
-    justify-content: start;
-  }
-}
+

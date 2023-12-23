@@ -6,3 +6,4 @@ export { default as Marker } from "./Marker";
 export { default as TvBox } from "./TvBox";
 export { default as SearchIcon } from "./SearchIcon";
 export { default as Arrow } from "./Arrow";
+export { default as Heart } from "./Heart";

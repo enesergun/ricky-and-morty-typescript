@@ -8,6 +8,33 @@
   &:hover {
     background: $zinc-600;
   }
+  .favorite {
+    position: absolute;
+    .favoriteWrapper {
+      position: relative;
+      left: 200px;
+      top: 10px;
+
+      & span {
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px;
+        background: $zinc-600;
+        border-radius: 50%;
+        &:hover {
+          & svg {
+            fill: $red;
+            & path {
+              stroke: $red;
+            }
+          }
+        }
+      }
+    }
+  }
+
   .characterCardImage {
     border-radius: 0.75rem; /* 12px */
   }
@@ -27,7 +54,7 @@
   }
   .characterCardInformationRow {
     display: flex;
-    width: 40%;
+    width: 30%;
     justify-content: space-between;
     align-items: center;
     margin-top: 0.25rem; /* 4px */

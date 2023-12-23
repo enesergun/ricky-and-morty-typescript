@@ -18,5 +18,55 @@ body {
     text-decoration: none;
     color: inherit;
   }
-  
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+.swiper-wrapper {
+  width: 360px !important;
+  @include media-breakpoint-up(md) {
+    width: 768px !important;
+  }
+  @include media-breakpoint-up(lg) {
+    width: 1024px !important;
+  }
+  @include media-breakpoint-up(xl) {
+    width: 1075px !important;
+    max-width: 1075px !important;
+  }
+}
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.characterCardSlide {
+  .characterCardContainer {
+    margin-left: 40px;
+  }
+}
+.swiper-button-prev,
+.swiper-button-next {
+  color: $white !important;
+}
+.swiper-button-prev {
+  left: 0 !important;
+}
+.swiper-button-next {
+  right: 0 !important;
+}
+.swiper-pagination-horizontal {
+  bottom: 0 !important;
+}
+.swiper-pagination-bullet {
+  background: $white !important;
+}
+.swiper-pagination-bullet-active {
+  background: $white !important;
 }
