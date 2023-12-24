@@ -13,7 +13,7 @@ const CharacterDetail = () => {
         <Image
           className={cn("characterDetail__image")}
           src="https://rickandmortyapi.com/api/character/avatar/12.jpeg"
-          width={300}
+          width={375}
           height={200}
           alt="RickyNMortyLogo"
         />

@@ -5,8 +5,7 @@ import styles from "./Hero.module.scss";
 import cn from "classnames";
 const Hero = () => {
   return (
-    <div className={cn(styles.hero)}>
-      <Image src="/logo.png" width={200} height={200} alt="RickyNMortyLogo" />
+    <div className={cn(styles.hero)}>      
       <Image src="/highlightImage.png" width={200} height={200} alt="Sanchez" />
       <div className={cn(styles.heroText)}>
         Find out everything in one{" "}

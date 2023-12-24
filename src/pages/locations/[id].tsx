@@ -8,6 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 const LocationDetail: React.FC = () => {
   return (
     <div className={cn("locationDetail", inter.className)}>
+      
       <DetailTitle title="Earth (Replacement Dimension)" favorite={false} />
       <div className={cn("locationDetail__informationWrapper")}>
         <InformationCard
