@@ -13,6 +13,7 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  min-height: 161px;
   &:hover {
     background: $zinc-600;
   }

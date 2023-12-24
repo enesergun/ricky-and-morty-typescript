@@ -6,37 +6,22 @@ import styles from "./Locations.module.scss";
 import Pagination from "@/components/Elements/Pagination";
 interface LocationsProps {
   seeAll: string;
+  locations: {
+    info: any;
+    results: any;
+  };
 }
 
-const Locations: React.FC<LocationsProps> = ({ seeAll }) => {
+const Locations: React.FC<LocationsProps> = ({ seeAll, locations }) => {
   return (
     <div className={cn(styles.locations)}>
       <SectionTitle sectionId="locations" title="Locations" />
       <div className={cn(styles.locationsCardWrapper)}>
-        <LocationCard />
-        <LocationCard />
-        <LocationCard />
-        <LocationCard />
-        <LocationCard />
-        <LocationCard />
-        <LocationCard />
-        <LocationCard />
-        <LocationCard />
-        <LocationCard />
-        <LocationCard />
-        <LocationCard />
-        <LocationCard />
-        <LocationCard />
-        <LocationCard />
+        {locations?.results?.map((location: any) => (
+          <LocationCard key={location.id} location={location} />
+        ))}
       </div>
-      <Pagination
-        info={{
-          count: 826,
-          pages: 42,
-          next: true,
-          prev: true,
-        }}
-      />
+      <Pagination info={locations?.info} />
     </div>
   );
 };

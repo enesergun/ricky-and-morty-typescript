@@ -4,7 +4,7 @@ import styles from "./DetailTitle.module.scss";
 import { Heart } from "@/constants/icons";
 
 interface DetailTitleProps {
-  title: string;
+  title: string | undefined;
   favorite: boolean;
 }
 

@@ -9,17 +9,19 @@ import CharacterSlider from "@/components/Swiper/CharacterSlider";
 interface CharactersProps {
   seeAll: string;
   title?: string;
+  data?:  Array<string>;
 }
 
 const Characters: React.FC<CharactersProps> = ({
   seeAll,
   title = "Characters",
+  data,
 }) => {
   return (
     <div className={cn(styles.characters)}>
       <SectionTitle sectionId="characters" title={title} seeAll={seeAll} />
       <div className={styles.sliderWrapper}>
-        <CharacterSlider data={[1, 2, 3, 4, 5, 6, 7]} />
+        <CharacterSlider data={data} />
       </div>
     </div>
   );

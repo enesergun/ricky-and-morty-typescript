@@ -2,8 +2,8 @@ import React from "react";
 import cn from "classnames";
 import styles from "./InformationCard.module.scss";
 interface InformationCardProps {
-  title: string;
-  value: string;
+  title: string | undefined;
+  value: string | undefined;
   percentage50Width: boolean;
 }
 

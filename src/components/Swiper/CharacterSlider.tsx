@@ -14,7 +14,7 @@ import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper/modules";
 import CharacterCard from "../Cards/CharacterCard";
 
 interface CharacterSliderProps {
-  data: Array<number>; // Change the type to match your actual data structure
+  data?: Array<string>; // Change the type to match your actual data structure
 }
 
 const CharacterSlider: React.FC<CharacterSliderProps> = ({ data }) => {
@@ -43,7 +43,7 @@ const CharacterSlider: React.FC<CharacterSliderProps> = ({ data }) => {
           },
         }}
       >
-        {data.map((item, index) => (
+        {data?.map((item, index) => (
           <SwiperSlide key={index}>
             <CharacterCard />
           </SwiperSlide>
