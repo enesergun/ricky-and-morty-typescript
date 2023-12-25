@@ -34,7 +34,7 @@ const CharacterCard: React.FC<CharacterCardProps> = ({ item }) => {
         <div className={cn(styles.characterCardTitle)}>{item?.name}</div>
         <div className={cn(styles.characterCardInformation)}>
           <div className={cn(styles.characterCardInformationRow)}>
-            <Pulse />
+            {item?.status === "Alive" ? <Pulse /> : <Skull />}
             <span>{item?.status}</span>
           </div>
           <div className={cn(styles.characterCardInformationRow)}>

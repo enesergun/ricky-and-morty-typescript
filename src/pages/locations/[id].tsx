@@ -39,8 +39,13 @@ const LocationDetail = ({ location, residentCharacters }: Props) => {
 };
 export const getServerSideProps: GetServerSideProps<Props> = async ({
   query,
+  res,
 }) => {
   try {
+    res.setHeader(
+      "Cache-Control",
+      "public, s-maxage=10, stale-while-revalidate=59"
+    );
     const response = await getSingleLocation(query.id);
 
     // Check if the response is an error

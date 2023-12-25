@@ -1,11 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import SectionTitle from "@/components/SectionTitle";
-import CharacterCard from "@/components/Cards/CharacterCard";
 import cn from "classnames";
 import styles from "./Characters.module.scss";
-import Pagination from "@/components/Elements/Pagination";
 import CharacterSlider from "@/components/Swiper/CharacterSlider";
-
+import { useDispatch } from "react-redux";
+import { setCharactersInResidentsList } from "@/redux/features/characters/charactersSlice";
 interface CharactersProps {
   seeAll: string;
   title?: string;
@@ -17,6 +16,11 @@ const Characters: React.FC<CharactersProps> = ({
   title = "Characters",
   data,
 }) => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(setCharactersInResidentsList(data));
+  }, []);
+
   return (
     <div className={cn(styles.characters)}>
       <SectionTitle sectionId="characters" title={title} seeAll={seeAll} />

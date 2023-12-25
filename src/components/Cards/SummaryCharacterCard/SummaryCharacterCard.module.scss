@@ -21,8 +21,12 @@
     display: flex;
     gap: 1rem;
   }
+  .characterCardImageWrapper {
+    max-width: 70px;
+  }
   .characterCardImage {
     border-radius: 50%;
+    width: auto;
   }
   .characterTitleWrapper {
     .characterName {

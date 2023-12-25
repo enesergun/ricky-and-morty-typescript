@@ -52,10 +52,11 @@
   }
   .characterCardInformationRow {
     display: flex;
-    width: 30%;
-    justify-content: space-between;
+    
+    justify-content: flex-start;
     align-items: center;
     margin-top: 0.25rem; /* 4px */
     margin-bottom: 0.25rem; /* 4px */
+    gap: 0.75rem;
   }
 }

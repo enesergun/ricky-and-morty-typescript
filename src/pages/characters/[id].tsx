@@ -12,11 +12,6 @@ interface Props {
 }
 
 const CharacterDetail: React.FC<Props> = ({ character }) => {
-  if (!character) {
-    // Handle the case where character is null (error state or loading state)
-    return <div>Error loading character data</div>;
-  }
-
   return (
     <div className={cn("characterDetail")}>
       <div className={cn("characterDetail__informationWrapper")}>
@@ -25,6 +20,7 @@ const CharacterDetail: React.FC<Props> = ({ character }) => {
           src={character[0].image}
           width={375}
           height={200}
+          priority={true}
           alt="Character Image"
         />
 

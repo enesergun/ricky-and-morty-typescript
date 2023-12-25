@@ -20,7 +20,7 @@ const InformationCard: React.FC<InformationCardProps> = ({
       )}
     >
       <div className={cn(styles.informationCardTitle)}>{title}</div>
-      <div className={cn(styles.informationCardValue)}>{value}</div>
+      <div className={cn(styles.informationCardValue)}>{value || "-"}</div>
     </div>
   );
 };
