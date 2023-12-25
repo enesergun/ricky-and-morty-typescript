@@ -1,25 +1,37 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { Pulse, Skull, Alien, Planet, Heart } from "@/constants/icons";
 import Link from "next/link";
 import styles from "./CharacterCard.module.scss";
 import cn from "classnames";
+import useFavorites from "@/hooks/useFavorites";
+import isCharacterFavorites from "@/helpers/isCharacterFavorites";
+import executeFavorite from "@/utils/exevuteFavorite";
 
 interface CharacterCardProps {
-  item: any ;
+  item: any;
 }
 
 const CharacterCard: React.FC<CharacterCardProps> = ({ item }) => {
+  const [alreadyFavorite, setAlreadyFavorite] = useState(false);
+  const { favorites, addToFavorites, removeFromFavorites } = useFavorites();
+  console.log("favorites", favorites);
+  useEffect(() => {
+    setAlreadyFavorite(isCharacterFavorites(item.id, favorites));
+  }, []);
+
   const handleAddFavorite = () => {
+    console.log('AAA')
     // Add your favorite logic here
+    executeFavorite(alreadyFavorite, addToFavorites, removeFromFavorites, item);
   };
 
   return (
     <div className={cn(styles.characterCard, "characterCardContainer")}>
       <div className={cn(styles.favorite)}>
         <div className={cn(styles.favoriteWrapper)}>
-          <span onClick={handleAddFavorite}>
-            <Heart color="transparent" />
+          <span onClick={() => handleAddFavorite()}>
+            <Heart color={alreadyFavorite ? "red" : "transparent"} />
           </span>
         </div>
       </div>

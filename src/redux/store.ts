@@ -4,10 +4,12 @@ import { createWrapper } from "next-redux-wrapper";
 import charactersSlice from "./features/characters/charactersSlice";
 import { persistReducer, persistStore } from "redux-persist";
 import storage from "redux-persist/lib/storage";
+import favoritesSlice from "./features/characters/favoritesSlice";
 
 
 const rootReducer = combineReducers({
   [charactersSlice.name]: charactersSlice.reducer,
+  [favoritesSlice.name]: favoritesSlice.reducer
 },)
 
 const makeConfiguredStore = () =>
@@ -24,7 +26,7 @@ const makeConfiguredStore = () =>
       // we need it only on client side
       const persistConfig = {
         key: "nextjs",
-        whitelist: ["characters"], // make sure it does not clash with server keys
+        whitelist: ["characters", "favorites"], // make sure it does not clash with server keys
         storage,
       };
       const persistedReducer = persistReducer(persistConfig, rootReducer);

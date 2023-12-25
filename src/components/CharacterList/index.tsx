@@ -13,21 +13,7 @@ const CharacterList: React.FC<CharacterListProps> = ({ seeAll }) => {
   return (
     <div className={cn(styles.characterList)}>
       <div className={cn(styles.characterListCardWrapper)}>
-        <CharacterCard item={undefined} />
-        <CharacterCard item={undefined} />
-        <CharacterCard item={undefined} />
-        <CharacterCard item={undefined} />
-        <CharacterCard item={undefined} />
-        <CharacterCard item={undefined} />
-        <CharacterCard item={undefined} />
-        <CharacterCard item={undefined} />
-        <CharacterCard item={undefined} />
-        <CharacterCard item={undefined} />
-        <CharacterCard item={undefined} />
-        <CharacterCard item={undefined} />
-        <CharacterCard item={undefined} />
-        <CharacterCard item={undefined} />
-        <CharacterCard item={undefined} />
+       
       </div>
       <Pagination
         info={{

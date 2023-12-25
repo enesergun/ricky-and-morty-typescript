@@ -1,10 +1,13 @@
 import { createSlice } from  "@reduxjs/toolkit";
 import {AppState} from "@/redux/store"
 export interface CharactersSlice {
-    residents: Array<object>
+    residents: Array<object>;
+    testArr: any
+    
 }
 const initialState: CharactersSlice = {
-    residents: []
+    residents: [],
+    testArr: []
 }
 
 export const charactersSlice = createSlice({
@@ -13,10 +16,17 @@ export const charactersSlice = createSlice({
     reducers: {
         setCharactersInResidentsList(state, action) {
             state.residents = action.payload
+        },
+        updateTest(state, action) {
+            state.testArr = action.payload
         }
+       
+        
     }
 })
 
-export const {setCharactersInResidentsList} = charactersSlice.actions
+export const {setCharactersInResidentsList, updateTest} = charactersSlice.actions
 export const  getCharactersInResidentsList = (state: AppState) =>  state.characters.residents;
+
+
 export default charactersSlice;
