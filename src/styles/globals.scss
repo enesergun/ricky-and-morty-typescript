@@ -63,9 +63,7 @@ body {
 .swiper-pagination-horizontal {
   bottom: 0 !important;
 }
-.swiper-pagination-bullet {
-  background: $white !important;
-}
-.swiper-pagination-bullet-active {
-  background: $white !important;
+.swiper-pagination-fraction {
+  color: $white !important;
+  font-weight: bold;
 }

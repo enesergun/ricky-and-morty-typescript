@@ -6,10 +6,7 @@ import cn from "classnames";
 import { Inter } from "next/font/google";
 import extractCharacterIds from "@/helpers/extractCharacterIds";
 import type { GetServerSideProps } from "next";
-import {
-  getMultipleCharacters,
-  MultipleCharacters,
-} from "@/actions/getMultipleCharacters";
+import { getCharacter, CharacterData } from "@/actions/getCharacter";
 import {
   getSingleLocation,
   SingleLocationData,
@@ -52,7 +49,7 @@ export const getServerSideProps: GetServerSideProps<Props> = async ({
     }
 
     const extractedIds = extractCharacterIds(response.data.residents);
-    const residentCharacters = await getMultipleCharacters(extractedIds);
+    const residentCharacters = await getCharacter(extractedIds);
 
     // Successfully fetched data
     return {

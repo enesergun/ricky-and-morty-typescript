@@ -4,43 +4,56 @@ import cn from "classnames";
 import style from "./CharacterInformation.module.scss";
 interface CharacterInformationProps {
   title: string;
+  data: {
+    gender: string;
+    status: string;
+    species: string;
+    origin: {
+      name: string;
+    };
+    location: {
+      name: string;
+    };
+    type: string;
+  };
 }
 
 const CharacterInformation: React.FC<CharacterInformationProps> = ({
   title,
+  data,
 }) => {
   return (
     <div className={cn(style.characterInformation)}>
       <div className={cn(style.characterInformationTitle)}>{title}</div>
       <div className={cn(style.characterInformationWrapper)}>
         <InformationCard
-          title={"Test"}
-          value={"test"}
+          title={"Status"}
+          value={data?.status}
           percentage50Width={true}
         />
         <InformationCard
-          title={"Test"}
-          value={"test"}
+          title={"Gender"}
+          value={data?.gender}
           percentage50Width={true}
         />
         <InformationCard
-          title={"Test"}
-          value={"test"}
+          title={"Species"}
+          value={data?.species}
           percentage50Width={true}
         />
         <InformationCard
-          title={"Test"}
-          value={"test"}
+          title={"Origin"}
+          value={data?.origin.name}
           percentage50Width={true}
         />
         <InformationCard
-          title={"Test"}
-          value={"test"}
+          title={"Location"}
+          value={data?.location.name}
           percentage50Width={true}
         />
         <InformationCard
-          title={"Test"}
-          value={"test"}
+          title={"Type"}
+          value={data?.type}
           percentage50Width={true}
         />
       </div>

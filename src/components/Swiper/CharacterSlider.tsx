@@ -1,6 +1,4 @@
-import React, { useRef, useState } from "react";
-import cn from "classnames";
-import styles from "./Swiper.module.scss";
+import React from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -22,9 +20,11 @@ const CharacterSlider: React.FC<CharacterSliderProps> = ({ data }) => {
     <Swiper
       cssMode={true}
       navigation={true}
-      pagination={true}
       mousewheel={true}
       keyboard={true}
+      pagination={{
+        type: "fraction",
+      }}
       modules={[Navigation, Pagination, Mousewheel, Keyboard]}
       className="characterCardSlide"
       breakpoints={{
