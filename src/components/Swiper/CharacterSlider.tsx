@@ -14,42 +14,40 @@ import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper/modules";
 import CharacterCard from "../Cards/CharacterCard";
 
 interface CharacterSliderProps {
-  data?: Array<string>; // Change the type to match your actual data structure
+  data?: Array<object>; // Change the type to match your actual data structure
 }
 
 const CharacterSlider: React.FC<CharacterSliderProps> = ({ data }) => {
   return (
-    <>
-      <Swiper
-        cssMode={true}
-        navigation={true}
-        pagination={true}
-        mousewheel={true}
-        keyboard={true}
-        modules={[Navigation, Pagination, Mousewheel, Keyboard]}
-        className="characterCardSlide"
-        breakpoints={{
-          640: {
-            slidesPerView: 1,
-            spaceBetween: 20,
-          },
-          768: {
-            slidesPerView: 2,
-            spaceBetween: 40,
-          },
-          1024: {
-            slidesPerView: 3,
-            spaceBetween: 10,
-          },
-        }}
-      >
-        {data?.map((item, index) => (
-          <SwiperSlide key={index}>
-            <CharacterCard />
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </>
+    <Swiper
+      cssMode={true}
+      navigation={true}
+      pagination={true}
+      mousewheel={true}
+      keyboard={true}
+      modules={[Navigation, Pagination, Mousewheel, Keyboard]}
+      className="characterCardSlide"
+      breakpoints={{
+        640: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 40,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 10,
+        },
+      }}
+    >
+      {data?.map((item, index) => (
+        <SwiperSlide key={index}>
+          <CharacterCard item={item} />
+        </SwiperSlide>
+      ))}
+    </Swiper>
   );
 };
 

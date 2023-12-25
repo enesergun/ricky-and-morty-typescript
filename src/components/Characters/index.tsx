@@ -9,7 +9,7 @@ import CharacterSlider from "@/components/Swiper/CharacterSlider";
 interface CharactersProps {
   seeAll: string;
   title?: string;
-  data?:  Array<string>;
+  data?: Array<object> | undefined;
 }
 
 const Characters: React.FC<CharactersProps> = ({

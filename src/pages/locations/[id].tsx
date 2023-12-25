@@ -4,8 +4,12 @@ import Characters from "@/components/Characters";
 import React from "react";
 import cn from "classnames";
 import { Inter } from "next/font/google";
-const inter = Inter({ subsets: ["latin"] });
+import extractCharacterIds from "@/helpers/extractCharacterIds";
 import type { GetServerSideProps } from "next";
+import {
+  getMultipleCharacters,
+  MultipleCharacters,
+} from "@/actions/getMultipleCharacters";
 import {
   getSingleLocation,
   SingleLocationData,
@@ -13,9 +17,10 @@ import {
 
 interface Props {
   location: SingleLocationData | null;
+  residentCharacters?: any;
 }
-
-const LocationDetail = ({ location }: Props) => {
+const inter = Inter({ subsets: ["latin"] });
+const LocationDetail = ({ location, residentCharacters }: Props) => {
   return (
     <div className={cn("locationDetail", inter.className)}>
       <DetailTitle title={location?.name} favorite={false} />
@@ -31,29 +36,44 @@ const LocationDetail = ({ location }: Props) => {
           percentage50Width={false}
         />
       </div>
-      <Characters seeAll={""} title="Residents" data={location?.residents} />
+      <Characters seeAll={""} title="Residents" data={residentCharacters} />
     </div>
   );
 };
 export const getServerSideProps: GetServerSideProps<Props> = async ({
   query,
 }) => {
-  
-  const response = await getSingleLocation(query.id);
+  try {
+    const response = await getSingleLocation(query.id);
 
-  // Check if the response is an error
-  if ("isAxiosError" in response) {
-    // Handle error, you can log it or return an error message
+    // Check if the response is an error
+    if ("isAxiosError" in response) {
+      throw response; // Throw the error to be caught in the catch block
+    }
 
-    return { props: { location: null } };
+    const extractedIds = extractCharacterIds(response.data.residents);
+    const residentCharacters = await getMultipleCharacters(extractedIds);
+
+    // Successfully fetched data
+    return {
+      props: {
+        location: response.data,
+        residentCharacters:
+          "isAxiosError" in residentCharacters ? null : residentCharacters.data,
+      },
+    };
+  } catch (error) {
+    // Handle the error here, you can log it or handle it in a way that suits your application
+    console.error("Error fetching data:", error);
+
+    // Return null or an empty object if an error occurs
+    return {
+      props: {
+        location: null,
+        residentCharacters: null,
+      },
+    };
   }
-
-  // Successfully fetched data
-  return {
-    props: {
-      location: response.data,
-    },
-  };
 };
 
 export default LocationDetail;
