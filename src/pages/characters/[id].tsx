@@ -29,7 +29,7 @@ const CharacterDetail: React.FC<Props> = ({ character }) => {
           <CharacterInformation title="Informations" data={character[0]} />
         </div>
       </div>
-      <OtherCharacters title="Other Characters" />
+      <OtherCharacters title="Other Characters" character={character[0]}/>
     </div>
   );
 };
