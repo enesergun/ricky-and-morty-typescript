@@ -15,9 +15,10 @@ import {
 interface Props {
   location: SingleLocationData | null;
   residentCharacters?: any;
+  filter: string | any;
 }
 const inter = Inter({ subsets: ["latin"] });
-const LocationDetail = ({ location, residentCharacters }: Props) => {
+const LocationDetail = ({ location, residentCharacters, filter }: Props) => {
   return (
     <div className={cn("locationDetail", inter.className)}>
       <DetailTitle title={location?.name} favorite={false} />
@@ -33,7 +34,12 @@ const LocationDetail = ({ location, residentCharacters }: Props) => {
           percentage50Width={false}
         />
       </div>
-      <Characters seeAll={""} title="Residents" data={residentCharacters} />
+      <Characters
+        seeAll={""}
+        title="Residents"
+        data={residentCharacters}
+        filter={filter}
+      />
     </div>
   );
 };
@@ -55,10 +61,11 @@ export const getServerSideProps: GetServerSideProps<Props> = async ({
 
     const extractedIds = extractCharacterIds(response.data.residents);
     const residentCharacters = await getCharacter(extractedIds);
-
+    const filter = query.status || "";
     // Successfully fetched data
     return {
       props: {
+        filter: filter,
         location: response.data,
         residentCharacters:
           "isAxiosError" in residentCharacters ? null : residentCharacters.data,
@@ -73,6 +80,7 @@ export const getServerSideProps: GetServerSideProps<Props> = async ({
       props: {
         location: null,
         residentCharacters: null,
+        filter: "",
       },
     };
   }

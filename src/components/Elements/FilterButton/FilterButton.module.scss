@@ -1,0 +1,32 @@
+@import "@/styles";
+.filtersButton {
+  color: $white;
+  border: 1px solid #a1a1aa;
+  border-radius: 15px;
+  gap: 15px;
+  min-width: 100px;
+  height: 42px;
+
+  cursor: pointer;
+  position: relative;
+  & span {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .removeButton {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: $zinc-800;
+    border-radius: 50%;
+    bottom: 20px;
+    right: -10px;
+    cursor: pointer;
+    border: none;
+    color: $white;
+    font-size: 12px;
+  }
+}

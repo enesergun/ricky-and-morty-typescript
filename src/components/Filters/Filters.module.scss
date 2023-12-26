@@ -1,0 +1,21 @@
+@import "@/styles";
+.filters {
+  display: flex;
+  align-items: center;
+  width: 75%;
+  overflow: auto;
+  gap: 15px;
+  max-width: 320px;
+  margin-bottom: 15px;
+  height: 70px;
+  @include media-breakpoint-up(sm) {
+    max-width: 500px;
+  }
+  @include media-breakpoint-up(md) {
+    width: 75%;
+    justify-content: center;
+  }
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
