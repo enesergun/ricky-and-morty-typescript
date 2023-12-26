@@ -7,8 +7,6 @@ import cn from "classnames";
 import useFavorites from "@/hooks/useFavorites";
 import isCharacterFavorites from "@/helpers/isCharacterFavorites";
 import executeFavorite from "@/utils/exevuteFavorite";
-import { getFavoritesCharacters } from "@/redux/features/characters/favoritesSlice";
-import { useSelector } from "react-redux";
 
 interface CharacterCardProps {
   item: any;
@@ -23,7 +21,6 @@ const CharacterCard: React.FC<CharacterCardProps> = ({ item }) => {
   }, [favorites]);
 
   const handleAddFavorite = () => {
-    // Add your favorite logic here
     executeFavorite(alreadyFavorite, addToFavorites, removeFromFavorites, item);
   };
 

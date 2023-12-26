@@ -25,11 +25,15 @@ const CharacterDetail: React.FC<Props> = ({ character }) => {
         />
 
         <div className={cn("characterDetail__informationContainer")}>
-          <DetailTitle title={character[0].name} favorite={true} />
+          <DetailTitle
+            title={character[0].name}
+            favorite={true}
+            item={character[0]}
+          />
           <CharacterInformation title="Informations" data={character[0]} />
         </div>
       </div>
-      <OtherCharacters title="Other Characters" character={character[0]}/>
+      <OtherCharacters title="Other Characters" character={character[0]} />
     </div>
   );
 };
