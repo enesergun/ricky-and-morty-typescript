@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { Pulse, Skull, Alien, Planet, Heart } from "@/constants/icons";
+import { Pulse, Skull, Alien, Heart } from "@/constants/icons";
 import Link from "next/link";
 import styles from "./CharacterCard.module.scss";
 import cn from "classnames";
 import useFavorites from "@/hooks/useFavorites";
 import isCharacterFavorites from "@/helpers/isCharacterFavorites";
 import executeFavorite from "@/utils/exevuteFavorite";
+import { getFavoritesCharacters } from "@/redux/features/characters/favoritesSlice";
+import { useSelector } from "react-redux";
 
 interface CharacterCardProps {
   item: any;
@@ -15,13 +17,12 @@ interface CharacterCardProps {
 const CharacterCard: React.FC<CharacterCardProps> = ({ item }) => {
   const [alreadyFavorite, setAlreadyFavorite] = useState(false);
   const { favorites, addToFavorites, removeFromFavorites } = useFavorites();
-  console.log("favorites", favorites);
+
   useEffect(() => {
     setAlreadyFavorite(isCharacterFavorites(item.id, favorites));
-  }, []);
+  }, [favorites]);
 
   const handleAddFavorite = () => {
-    console.log('AAA')
     // Add your favorite logic here
     executeFavorite(alreadyFavorite, addToFavorites, removeFromFavorites, item);
   };

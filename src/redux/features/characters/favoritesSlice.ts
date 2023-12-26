@@ -3,7 +3,7 @@ import {AppState} from "@/redux/store"
 
 export interface CharactersSlice {
     
-    favorites: Array<object>
+    favorites: Array<any>
     
 }
 const initialState: CharactersSlice = {
@@ -22,7 +22,7 @@ export const favoritesSlice = createSlice({
         },
         removeFromFavorites(state, action) {
             const character = action.payload;
-            state.favorites = state.favorites.filter((id) => id !== character.id);
+            state.favorites = state.favorites.filter(element => element. id !== character.id)
         },
         
     }

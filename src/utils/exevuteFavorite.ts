@@ -1,9 +1,7 @@
 const executeFavorite = (alreadyFavorite: any, addToFavorites: any, removeFromFavorites: any, item: any) => {
-    if (alreadyFavorite) {
-        console.log('here')
+    if (alreadyFavorite) {        
         removeFromFavorites(item)
-    } else {
-        console.log('here 2')
+    } else {        
         addToFavorites(item)
     }
 
