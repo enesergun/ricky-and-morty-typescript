@@ -6,10 +6,12 @@ import styles from "./Locations.module.scss";
 import Pagination from "@/components/Elements/Pagination";
 interface LocationsProps {
   seeAll: string;
-  locations: {
-    info: any;
-    results: any;
-  };
+  locations:
+    | {
+        info: any;
+        results: any;
+      }
+    | any;
 }
 
 const Locations: React.FC<LocationsProps> = ({ seeAll, locations }) => {
