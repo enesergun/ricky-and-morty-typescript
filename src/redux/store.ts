@@ -26,7 +26,7 @@ const makeConfiguredStore = () =>
       // we need it only on client side
       const persistConfig = {
         key: "nextjs",
-        whitelist: ["characters", "favorites"], // make sure it does not clash with server keys
+        whitelist: ["characters"], // make sure it does not clash with server keys
         storage,
       };
       const persistedReducer = persistReducer(persistConfig, rootReducer);
