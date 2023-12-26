@@ -9,6 +9,7 @@ import {
   getFavoritesCharacters,
   setCurrentPage,
 } from "@/redux/features/characters/favoritesSlice";
+import NoDataFound from "@/components/NoDataFound";
 interface CharacterListProps {
   seeAll: string;
   page: string;
@@ -17,7 +18,6 @@ interface CharacterListProps {
 const CharacterList: React.FC<CharacterListProps> = ({ seeAll, page }) => {
   const dispatch = useDispatch();
   const paginatedFavorites = useSelector(getPaginatedFavorites);
-  const favorites = useSelector(getFavoritesCharacters);
 
   useEffect(() => {
     dispatch(setCurrentPage(Number(page)));
@@ -26,13 +26,16 @@ const CharacterList: React.FC<CharacterListProps> = ({ seeAll, page }) => {
   return (
     <div className={cn(styles.characterList)}>
       <div className={cn(styles.characterListCardWrapper)}>
+        {paginatedFavorites.favorites.length === 0 && <NoDataFound />}
         {paginatedFavorites.favorites.map(
           (character: { id: React.Key | null | undefined }) => (
             <CharacterCard key={character.id} item={character} />
           )
         )}
       </div>
-      <Pagination info={paginatedFavorites.info} />
+      {paginatedFavorites.favorites.length !== 0 && (
+        <Pagination info={paginatedFavorites.info} />
+      )}
     </div>
   );
 };

@@ -6,6 +6,7 @@ import CharacterSlider from "@/components/Swiper/CharacterSlider";
 import { useDispatch } from "react-redux";
 import { setCharactersInResidentsList } from "@/redux/features/characters/charactersSlice";
 import Filters from "@/components/Filters";
+import NoDataFound from "../NoDataFound";
 interface CharactersProps {
   seeAll: string;
   title?: string;
@@ -19,7 +20,7 @@ const Characters: React.FC<CharactersProps> = ({
   data,
   filter,
 }) => {
-  const [filteredData, setFilteredData] = useState([]);
+  const [filteredData, setFilteredData] = useState(data);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(setCharactersInResidentsList(data));
@@ -39,7 +40,8 @@ const Characters: React.FC<CharactersProps> = ({
     <div className={cn(styles.characters)}>
       <Filters />
       <SectionTitle sectionId="characters" title={title} seeAll={seeAll} />
-      <div className={styles.sliderWrapper}>
+      <div className={cn(styles.sliderWrapper)}>
+        {filteredData?.length === 0 && <NoDataFound />}
         <CharacterSlider data={filteredData} />
       </div>
     </div>

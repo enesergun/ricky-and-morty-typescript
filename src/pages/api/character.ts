@@ -12,7 +12,7 @@ export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-    const {body} = req;    
+    const {body} = req;        
     let config = {
         method: "GET",
         url: `https://rickandmortyapi.com/api/character/${body.characterId}`,              

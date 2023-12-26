@@ -66,7 +66,10 @@ export const getServerSideProps: GetServerSideProps<Props> = async ({
     }
 
     const extractedIds = extractCharacterIds(response.data.residents);
-    const residentCharacters = await getCharacter(extractedIds);
+    const residentCharacters =
+      response.data.residents.length > 0
+        ? await getCharacter(extractedIds)
+        : { data: [] };
     const filter = query.status || "";
     // Successfully fetched data
     return {
