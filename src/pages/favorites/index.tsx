@@ -11,7 +11,9 @@ interface FavoritesProps {
 const Favorites: NextPage<FavoritesProps> = ({ page }) => {
   return (
     <div className={cn("favorites")}>
-      <DetailTitle title={"My Favorites"} favorite={false} />
+      <DetailTitle title={"My Favorites"} favorite={false} item={{
+        id: 0
+      }} />
       <CharacterList seeAll="" page={page} />
     </div>
   );

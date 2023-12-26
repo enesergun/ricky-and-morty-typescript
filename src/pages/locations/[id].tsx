@@ -21,7 +21,13 @@ const inter = Inter({ subsets: ["latin"] });
 const LocationDetail = ({ location, residentCharacters, filter }: Props) => {
   return (
     <div className={cn("locationDetail", inter.className)}>
-      <DetailTitle title={location?.name} favorite={false} />
+      <DetailTitle
+        title={location?.name}
+        favorite={false}
+        item={{
+          id: 0,
+        }}
+      />
       <div className={cn("locationDetail__informationWrapper")}>
         <InformationCard
           title={"Type"}
