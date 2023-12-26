@@ -14,7 +14,7 @@ export default function Home({ locations }: Props) {
   return (
     <main className={cn(inter.className)}>
       <Hero />
-      <HomepageContent locations={locations} />
+      
     </main>
   );
 }

@@ -5,9 +5,29 @@
   flex-direction: column;
   align-items: center;
   background: $black;
-  padding: 1.75rem 0;
+
   width: 100%;
   gap: 1rem;
+  height: 100vh;
+  .imageContainer {
+    width: 50%;
+    text-align: center;
+    @include media-breakpoint-up(sm) {
+      width: 45%;
+    }
+    @include media-breakpoint-up(md) {
+      width: 35%;
+    }
+    @include media-breakpoint-up(lg) {
+      width: 25%;
+    }
+    .image {
+      object-fit: contain;
+      width: 100% !important;
+      position: relative !important;
+      height: unset !important;
+    }
+  }
   .heroText {
     color: $white;
     font-size: 1.5rem;

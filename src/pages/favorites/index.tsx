@@ -1,7 +1,7 @@
 import React from "react";
 import cn from "classnames";
 import DetailTitle from "@/components/DetailTitle";
-import CharacterList from "@/components/CharacterList";
+import FavoriteCharacterList from "@/components/CharacterList/favoriteCharacterList";
 import type { GetServerSideProps, NextPage } from "next";
 
 interface FavoritesProps {
@@ -11,10 +11,14 @@ interface FavoritesProps {
 const Favorites: NextPage<FavoritesProps> = ({ page }) => {
   return (
     <div className={cn("favorites")}>
-      <DetailTitle title={"My Favorites"} favorite={false} item={{
-        id: 0
-      }} />
-      <CharacterList seeAll="" page={page} />
+      <DetailTitle
+        title={"My Favorites"}
+        favorite={false}
+        item={{
+          id: 0,
+        }}
+      />
+      <FavoriteCharacterList seeAll="" page={page} />
     </div>
   );
 };
