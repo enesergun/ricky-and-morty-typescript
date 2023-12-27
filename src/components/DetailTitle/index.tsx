@@ -22,7 +22,7 @@ const DetailTitle: React.FC<DetailTitleProps> = ({ title, favorite, item }) => {
     if (favorite) {
       setAlreadyFavorite(isCharacterFavorites(item?.id, favorites));
     }
-  }, [favorites]);
+  }, [item.id, favorites]);
 
   const handleAddFavorite = () => {
     executeFavorite(alreadyFavorite, addToFavorites, removeFromFavorites, item);

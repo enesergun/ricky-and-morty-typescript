@@ -1,13 +1,7 @@
 @import "@/styles";
-.summaryCharacterCard {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  color: $white;
+.cardWrapper {
   width: 100%;
-  min-width: 304px;
-  max-width: 324px;
+  min-width: 275px;
   @include media-breakpoint-up(sm) {
     width: 45%;
   }
@@ -17,35 +11,55 @@
   @include media-breakpoint-up(lg) {
     width: 30%;
   }
-  .characterHeader {
+  .summaryCharacterCard {
     display: flex;
-    gap: 1rem;
-  }
-  .characterCardImageWrapper {
-    max-width: 70px;
-  }
-  .characterCardImage {
-    border-radius: 50%;
-    width: auto;
-  }
-  .characterTitleWrapper {
-    .characterName {
-      font-size: 1.25rem;
-      line-height: 1.75rem;
+    justify-content: space-between;
+    align-items: center;
+
+    color: $white;
+    width: 100%;
+    min-width: 275px;
+    max-width: 324px;
+    @include media-breakpoint-up(sm) {
+      
     }
-    .characterPlanet {
-      font-size: 1rem;
-      line-height: 1.5rem;
-      color: $zinc-300;
+    @include media-breakpoint-up(md) {
+      
     }
-    .characterQualification {
-      font-size: 0.75rem;
-      line-height: 1rem;
-      color: $zinc-300;
-      font-style: italic;
+    /* @include media-breakpoint-up(lg) {
+      width: 30%;
+    } */
+
+    .characterHeader {
+      display: flex;
+      gap: 1rem;
     }
-  }
-  & svg {
-    transform: rotate(-90deg);
+    .characterCardImageWrapper {
+      max-width: 70px;
+    }
+    .characterCardImage {
+      border-radius: 50%;
+      width: auto;
+    }
+    .characterTitleWrapper {
+      .characterName {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+      }
+      .characterPlanet {
+        font-size: 1rem;
+        line-height: 1.5rem;
+        color: $zinc-300;
+      }
+      .characterQualification {
+        font-size: 0.75rem;
+        line-height: 1rem;
+        color: $zinc-300;
+        font-style: italic;
+      }
+    }
+    & svg {
+      transform: rotate(-90deg);
+    }
   }
 }
