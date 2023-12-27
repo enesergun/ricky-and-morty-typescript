@@ -19,17 +19,6 @@
     -webkit-box-orient: vertical;
   }
   .favorite {
-    .favoriteWrapper {
-      & span {
-        &:hover {
-          & svg {
-            fill: $red;
-            & path {
-              stroke: $red;
-            }
-          }
-        }
-      }
-    }
+    cursor: pointer;
   }
 }
