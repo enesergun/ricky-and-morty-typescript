@@ -10,11 +10,11 @@ export interface CharacterData {
   error: object;
 }
 
-export const getCharacters = async (page: string | undefined | string[], status:string | undefined | string[] ): Promise<AxiosResponse<CharacterData> | AxiosError<CharacterData>> => {
+export const getCharacters = async (baseUrl: string, page: string | undefined | string[], status:string | undefined | string[] ): Promise<AxiosResponse<CharacterData> | AxiosError<CharacterData>> => {
   try {
     const config = {
       method: "post",
-      url: "http://localhost:3000/api/characters",
+      url: baseUrl + "/api/characters",
       data: {page: page || "", status: status || ""}
     };
 

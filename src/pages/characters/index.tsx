@@ -25,9 +25,11 @@ const Characters: NextPage<CharactersProps> = ({ characters }) => {
 };
 
 export const getServerSideProps: GetServerSideProps<CharactersProps> = async ({
+  req,
   query,
 }) => {
-  const response = await getCharacters(query.page, query.status);
+  const baseUrl = `${req.headers['x-forwarded-proto']}://${req.headers.host}`;
+  const response = await getCharacters(baseUrl, query.page, query.status);
 
 
   // Check if the response is an error

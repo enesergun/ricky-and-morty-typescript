@@ -51,14 +51,17 @@ const LocationDetail = ({ location, residentCharacters, filter }: Props) => {
 };
 export const getServerSideProps: GetServerSideProps<Props> = async ({
   query,
+  req,
   res,
 }) => {
   try {
+    const baseUrl = `${req.headers["x-forwarded-proto"]}://${req.headers.host}`;
+
     res.setHeader(
       "Cache-Control",
       "public, s-maxage=10, stale-while-revalidate=59"
     );
-    const response = await getSingleLocation(query.id);
+    const response = await getSingleLocation(baseUrl, query.id);
 
     // Check if the response is an error
     if ("isAxiosError" in response) {
@@ -68,7 +71,7 @@ export const getServerSideProps: GetServerSideProps<Props> = async ({
     const extractedIds = extractCharacterIds(response.data.residents);
     const residentCharacters =
       response.data.residents.length > 0
-        ? await getCharacter(extractedIds)
+        ? await getCharacter(baseUrl, extractedIds)
         : { data: [] };
     const filter = query.status || "";
     // Successfully fetched data

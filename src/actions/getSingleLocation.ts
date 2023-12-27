@@ -13,11 +13,11 @@ export interface SingleLocationData {
   error: object;
 }
 
-export const getSingleLocation = async (locationId: string | undefined | string[]): Promise<AxiosResponse<SingleLocationData> | AxiosError<SingleLocationData>> => {
+export const getSingleLocation = async (baseUrl: string, locationId: string | undefined | string[]): Promise<AxiosResponse<SingleLocationData> | AxiosError<SingleLocationData>> => {
   try {
     const config = {
       method: "post",
-      url: "http://localhost:3000/api/location",
+      url: baseUrl + "/api/location",
       data: {locationId: locationId}
     };
 

@@ -10,11 +10,11 @@ export interface LocationData {
   error: object;
 }
 
-export const getLocation = async (page: string | undefined | string[]): Promise<AxiosResponse<LocationData> | AxiosError<LocationData>> => {
+export const getLocation = async (baseUrl: string, page: string | undefined | string[]): Promise<AxiosResponse<LocationData> | AxiosError<LocationData>> => {
   try {
     const config = {
       method: "post",
-      url: "http://localhost:3000/api/locations",
+      url: baseUrl + "/api/locations",
       data: {page: page}
     };
 

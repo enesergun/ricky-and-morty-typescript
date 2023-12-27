@@ -39,9 +39,11 @@ const CharacterDetail: React.FC<Props> = ({ character }) => {
 };
 
 export const getServerSideProps: GetServerSideProps<Props> = async ({
+  req,
   query,
 }) => {
-  const response = await getCharacter(query.id);
+  const baseUrl = `${req.headers["x-forwarded-proto"]}://${req.headers.host}`;
+  const response = await getCharacter(baseUrl, query.id);
 
   // Check if the response is an error
   if ("isAxiosError" in response) {

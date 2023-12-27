@@ -25,9 +25,11 @@ const locationsPage: NextPage<Props> = ({ locations }) => {
 };
 
 export const getServerSideProps: GetServerSideProps<Props> = async ({
+  req,
   query,
 }) => {
-  const response = await getLocation(query.page);
+  const baseUrl = `${req.headers['x-forwarded-proto']}://${req.headers.host}`;
+  const response = await getLocation(baseUrl, query.page);
 
   // Check if the response is an error
   if ("isAxiosError" in response) {
