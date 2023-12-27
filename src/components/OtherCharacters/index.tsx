@@ -10,11 +10,13 @@ import handleResidents from "@/utils/handleResidents";
 interface OtherCharactersProps {
   title: string;
   character: any;
+  baseUrl: string | null;
 }
 
 const OtherCharacters: React.FC<OtherCharactersProps> = ({
   title,
   character,
+  baseUrl,
 }) => {
   const dispatch = useDispatch();
   const residentsList = useSelector(getAlreadyCalledResidentsOfLocation);
@@ -33,7 +35,7 @@ const OtherCharacters: React.FC<OtherCharactersProps> = ({
 
   useEffect(() => {
     if (character.location.name !== residentsList.name) {
-      handleResidents(character, dispatch);
+      handleResidents(baseUrl, character, dispatch);
     }
   }, []);
 

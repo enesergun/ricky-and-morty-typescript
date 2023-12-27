@@ -14,7 +14,7 @@ export interface SingleLocationData {
   error: object;
 }
 
-export const getSingleLocation = async (baseUrl: string, locationId: string | undefined | string[]): Promise<AxiosResponse<SingleLocationData> | AxiosError<SingleLocationData>> => {
+export const getSingleLocation = async (baseUrl: string | null, locationId: string | undefined | string[]): Promise<AxiosResponse<SingleLocationData> | AxiosError<SingleLocationData>> => {
   try {
     const config = {
       method: "post",

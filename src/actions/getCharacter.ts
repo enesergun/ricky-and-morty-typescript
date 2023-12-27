@@ -10,7 +10,7 @@ export interface CharacterData {
   
 }
 
-export const getCharacter = async (baseUrl: string, characterIds: string | undefined | string[]): Promise<AxiosResponse<CharacterData> | AxiosError<CharacterData>> => {
+export const getCharacter = async (baseUrl: string | null, characterIds: string | undefined | string[]): Promise<AxiosResponse<CharacterData> | AxiosError<CharacterData>> => {
   try {
     const config = {
       method: "post",

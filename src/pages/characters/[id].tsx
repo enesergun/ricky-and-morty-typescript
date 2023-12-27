@@ -9,9 +9,10 @@ import { getCharacter } from "@/actions/getCharacter";
 
 interface Props {
   character: any;
+  baseUrl: string | null;
 }
 
-const CharacterDetail: React.FC<Props> = ({ character }) => {
+const CharacterDetail: React.FC<Props> = ({ character, baseUrl }) => {
   return (
     <div className={cn("characterDetail")}>
       <div className={cn("characterDetail__informationWrapper")}>
@@ -33,7 +34,7 @@ const CharacterDetail: React.FC<Props> = ({ character }) => {
           <CharacterInformation title="Informations" data={character[0]} />
         </div>
       </div>
-      <OtherCharacters title="Other Characters" character={character[0]} />
+      <OtherCharacters title="Other Characters" character={character[0]} baseUrl={baseUrl} />
     </div>
   );
 };
@@ -44,16 +45,16 @@ export const getServerSideProps: GetServerSideProps<Props> = async ({
 }) => {
   const baseUrl = `${req.headers["x-forwarded-proto"]}://${req.headers.host}`;
   const response = await getCharacter(baseUrl, query.id);
-
   // Check if the response is an error
   if ("isAxiosError" in response) {
     // Handle error, you can log it or return an error message
-    return { props: { character: null } };
+    return { props: { character: null, baseUrl } };
   }
 
   // Successfully fetched data
   return {
     props: {
+      baseUrl,
       character: response.data,
     },
   };

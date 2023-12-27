@@ -3,7 +3,7 @@ import { getSingleLocation } from "@/actions/getSingleLocation";
 import extractCharacterIds from "@/helpers/extractCharacterIds";
 import { setCharactersInResidentsList } from "@/redux/features/characters/charactersSlice";
 
-const handleResidents = (character: any, dispatch: any) => {
+const handleResidents = (baseUrl: string | null, character: any, dispatch: any) => {
     const getResidents = () => {
       let splittedLocationURL = character?.location?.url?.split("/");
       const locationId = splittedLocationURL[splittedLocationURL?.length - 1];
@@ -12,7 +12,7 @@ const handleResidents = (character: any, dispatch: any) => {
   
     const getLocationWithId = async (locationId: any) => {
       const response: any = await getSingleLocation(
-        "http://localhost:3000",
+        baseUrl,
         locationId
       );
   
@@ -20,7 +20,7 @@ const handleResidents = (character: any, dispatch: any) => {
   
       const residentCharacters: any =
         response.data.residents.length > 0
-          ? await getCharacter("http://localhost:3000", extractedIds)
+          ? await getCharacter( baseUrl, extractedIds)
           : { data: [] };
       dispatch(setCharactersInResidentsList(residentCharacters.data));
     };
