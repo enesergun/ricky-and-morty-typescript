@@ -8,6 +8,7 @@ export interface SingleLocationData {
   name: string;
   type: string;
   dimension: string;
+  url: string;
   residents:  Array<string>;
   // ...
   error: object;

@@ -6,7 +6,7 @@ import cn from "classnames";
 import { Inter } from "next/font/google";
 import extractCharacterIds from "@/helpers/extractCharacterIds";
 import type { GetServerSideProps } from "next";
-import { getCharacter, CharacterData } from "@/actions/getCharacter";
+import { getCharacter } from "@/actions/getCharacter";
 import {
   getSingleLocation,
   SingleLocationData,
@@ -45,6 +45,7 @@ const LocationDetail = ({ location, residentCharacters, filter }: Props) => {
         title="Residents"
         data={residentCharacters}
         filter={filter}
+        location={{ name: location?.name, url: location?.url }}
       />
     </div>
   );

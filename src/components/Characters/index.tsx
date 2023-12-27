@@ -4,7 +4,10 @@ import cn from "classnames";
 import styles from "./Characters.module.scss";
 import CharacterSlider from "@/components/Swiper/CharacterSlider";
 import { useDispatch } from "react-redux";
-import { setCharactersInResidentsList } from "@/redux/features/characters/charactersSlice";
+import {
+  setCharactersInResidentsList,
+  setAlreadyCalledResidentsOfLocation,
+} from "@/redux/features/characters/charactersSlice";
 import Filters from "@/components/Filters";
 import NoDataFound from "../NoDataFound";
 interface CharactersProps {
@@ -12,6 +15,10 @@ interface CharactersProps {
   title?: string;
   data?: any;
   filter?: string;
+  location: {
+    name: string | undefined;
+    url: string | undefined;
+  };
 }
 
 const Characters: React.FC<CharactersProps> = ({
@@ -19,11 +26,13 @@ const Characters: React.FC<CharactersProps> = ({
   title = "Characters",
   data,
   filter,
+  location,
 }) => {
   const [filteredData, setFilteredData] = useState(data);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(setCharactersInResidentsList(data));
+    dispatch(setAlreadyCalledResidentsOfLocation(location));
   }, []);
   useEffect(() => {
     if (filter) {

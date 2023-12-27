@@ -1,19 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import cn from "classnames";
 import style from "./OtherCharacters.module.scss";
 import SummaryCharacterCard from "@/components/Cards/SummaryCharacterCard";
-import { useSelector } from "react-redux";
-import { getCharactersInResidentsList } from "@/redux/features/characters/charactersSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { getAlreadyCalledResidentsOfLocation } from "@/redux/features/characters/charactersSlice";
 import NoDataFound from "../NoDataFound";
+
+import handleResidents from "@/utils/handleResidents";
 interface OtherCharactersProps {
   title: string;
-  character: object;
+  character: any;
 }
 
 const OtherCharacters: React.FC<OtherCharactersProps> = ({
   title,
   character,
 }) => {
+  const dispatch = useDispatch();
+  const residentsList = useSelector(getAlreadyCalledResidentsOfLocation);
   const getOtherCharactersWithSameCharacter =
     (character: any) => (store: { characters: { residents: any[] } }) => {
       return store.characters.residents.filter(
@@ -26,6 +30,13 @@ const OtherCharacters: React.FC<OtherCharactersProps> = ({
   const charactersInList: Array<any> = useSelector(
     getOtherCharactersWithSameCharacter(character)
   );
+
+  useEffect(() => {
+    if (character.location.name !== residentsList.name) {
+      handleResidents(character, dispatch);
+    }
+  }, []);
+
   return (
     <div className={cn(style.otherCharacters)}>
       <div className={cn(style.otherCharactersTitle)}>{title}</div>

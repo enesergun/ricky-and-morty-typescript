@@ -2,12 +2,20 @@ import { createSlice } from  "@reduxjs/toolkit";
 import {AppState} from "@/redux/store"
 export interface CharactersSlice {
     residents: Array<object>;
-    testArr: any
+    testArr: any;
+    residentsOfLocation: {
+        name: string;
+        url: string;
+    }
     
 }
 const initialState: CharactersSlice = {
     residents: [],
-    testArr: []
+    testArr: [],
+    residentsOfLocation: {
+        name: "",
+        url: ""
+    }
 }
 
 export const charactersSlice = createSlice({
@@ -16,17 +24,19 @@ export const charactersSlice = createSlice({
     reducers: {
         setCharactersInResidentsList(state, action) {
             state.residents = action.payload
-        },
-        updateTest(state, action) {
-            state.testArr = action.payload
+        },    
+        setAlreadyCalledResidentsOfLocation(state, action) {
+            
+            state.residentsOfLocation = action.payload
         }
        
         
     }
 })
 
-export const {setCharactersInResidentsList, updateTest} = charactersSlice.actions
+export const {setCharactersInResidentsList, setAlreadyCalledResidentsOfLocation} = charactersSlice.actions
 export const  getCharactersInResidentsList = (state: AppState) =>  state.characters.residents;
+export const  getAlreadyCalledResidentsOfLocation = (state: AppState) =>  state.characters.residentsOfLocation;
 
 
 export default charactersSlice;
