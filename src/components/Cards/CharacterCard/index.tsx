@@ -40,6 +40,7 @@ const CharacterCard: React.FC<CharacterCardProps> = ({ item }) => {
           width={250}
           height={150}
           alt="Character Image"
+          loading="lazy"
         />
         <div className={cn(styles.characterCardTitle)}>{item?.name}</div>
         <div className={cn(styles.characterCardInformation)}>

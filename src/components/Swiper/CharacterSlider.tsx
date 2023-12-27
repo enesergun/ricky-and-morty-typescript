@@ -22,9 +22,6 @@ const CharacterSlider: React.FC<CharacterSliderProps> = ({ data }) => {
       navigation={true}
       mousewheel={true}
       keyboard={true}
-      pagination={{
-        type: "fraction",
-      }}
       modules={[Navigation, Pagination, Mousewheel, Keyboard]}
       className="characterCardSlide"
       breakpoints={{

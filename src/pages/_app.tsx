@@ -12,6 +12,11 @@ function App({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <title>Ricky And Morty</title>
+        <meta
+          name="description"
+          content="Characters, locations, episodes and more."
+        />
+        <meta name="keywords" content="ricky, morty, rick, smith" />
       </Head>
       <PersistGate persistor={store.__persistor} loading={<div>Loading</div>}>
         <Layout>

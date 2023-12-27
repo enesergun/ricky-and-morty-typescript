@@ -20,15 +20,6 @@
     width: 100%;
     min-width: 275px;
     max-width: 324px;
-    @include media-breakpoint-up(sm) {
-      
-    }
-    @include media-breakpoint-up(md) {
-      
-    }
-    /* @include media-breakpoint-up(lg) {
-      width: 30%;
-    } */
 
     .characterHeader {
       display: flex;
@@ -36,6 +27,9 @@
     }
     .characterCardImageWrapper {
       max-width: 70px;
+      & img {
+        width: 70px;
+      }
     }
     .characterCardImage {
       border-radius: 50%;
@@ -45,6 +39,11 @@
       .characterName {
         font-size: 1.25rem;
         line-height: 1.75rem;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        line-clamp: 1;
+        -webkit-box-orient: vertical;
       }
       .characterPlanet {
         font-size: 1rem;

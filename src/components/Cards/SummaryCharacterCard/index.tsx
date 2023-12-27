@@ -37,6 +37,7 @@ const SummaryCharacterCard: React.FC<SummaryCharacterCardProps> = ({
               width={70}
               height={50}
               alt="Character Image"
+              loading="lazy"
             />
           </div>
           <div className={cn(styles.characterTitleWrapper)}>

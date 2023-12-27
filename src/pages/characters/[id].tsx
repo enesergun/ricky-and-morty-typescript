@@ -34,7 +34,11 @@ const CharacterDetail: React.FC<Props> = ({ character, baseUrl }) => {
           <CharacterInformation title="Informations" data={character[0]} />
         </div>
       </div>
-      <OtherCharacters title="Other Characters" character={character[0]} baseUrl={baseUrl} />
+      <OtherCharacters
+        title="Other Characters"
+        character={character[0]}
+        baseUrl={baseUrl}
+      />
     </div>
   );
 };

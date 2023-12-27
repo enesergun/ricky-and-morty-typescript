@@ -12,6 +12,11 @@
     text-align: center;
     font-weight: 600;
     color: $white;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
   }
   .favorite {
     .favoriteWrapper {

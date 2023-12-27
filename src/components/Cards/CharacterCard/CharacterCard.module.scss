@@ -34,6 +34,8 @@
   }
 
   .characterCardImage {
+    width: 250px;
+    height: 250px;
     border-radius: 0.75rem; /* 12px */
   }
   .characterCardTitle {
@@ -52,7 +54,7 @@
   }
   .characterCardInformationRow {
     display: flex;
-    
+
     justify-content: flex-start;
     align-items: center;
     margin-top: 0.25rem; /* 4px */

@@ -1,7 +1,7 @@
 @import "@/styles";
 .locationCard {
   background: $zinc-800;
-  width: 170px;
+  width: 210px;
   padding: 1rem; /* 16px */
   border-radius: 0.75rem; /* 12px */
   color: $white;
@@ -19,5 +19,25 @@
   }
   .locationCardIcon {
     margin: 0.5rem 0;
+  }
+  .informationAboutLocation {
+    width: 100%;
+    text-align: left;
+    .informationWrapper {
+      display: flex;
+      margin: 5px 0;
+      .informationTitle {
+        min-width: 100px;
+        width: 100px;
+        display: inline-block;
+      }
+      .informationValue {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap; // Ekle
+        width: 100px; // Sabit bir genişlik belirleyin
+        display: inline-block;
+      }
+    }
   }
 }

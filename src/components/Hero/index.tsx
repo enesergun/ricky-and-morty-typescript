@@ -9,9 +9,12 @@ const Hero = () => {
       <div className={cn(styles.imageContainer)}>
         <Image
           src="/highlightImage.png"
-          layout="fill"
+          layout="responsive"
+          width={150}
+          height={150}
           className={cn(styles.image)}
           alt="Sanchez"
+          loading="eager"
         />
       </div>
       <div className={cn(styles.heroText)}>

@@ -17,7 +17,6 @@ interface LocationsProps {
 const Locations: React.FC<LocationsProps> = ({ seeAll, locations }) => {
   return (
     <div className={cn(styles.locations)}>
-      <SectionTitle sectionId="locations" title="Locations" />
       <div className={cn(styles.locationsCardWrapper)}>
         {locations?.results?.map((location: any) => (
           <LocationCard key={location.id} location={location} />
