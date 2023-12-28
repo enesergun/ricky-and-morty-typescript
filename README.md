@@ -1,7 +1,67 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
 
+## Rick And Morty 
+
+This project has been developed using the Rick And Morty API with Next.js.
+
+## Visitor Stories
+Users can perform the following actions in this application:
+
+- View a list of all locations and all characters with a page structure,
+- View the `name` `type` and `resident count` information of a location in all locations,
+- View the `status` and `type` information of a character in all characters and filter them by `alive` `dead` and `unknown`
+- Click on any location to see its residents along with the `dimension` information and filter the residents based on their `status`
+- Navigate to the details of any character to view information such as `species` `type` `gender` and `origin`
+- List other characters with the same `status` and `location` as the character whose details are being viewed,
+- Add and remove characters to/from favorites on the character list, location details, and character pages,
+- View characters added to favorites on the "my favorites" page.
+
+## Technologies
+- Nextjs
+- API Routes
+- Redux-toolkit
+- SCSS
+- axios
+- next-redux-wrapper
+- redux-persist
+- Swiper
+
+## Screenshots
+
+The application has been developed with a "mobile-first" approach, making it completely responsive. Therefore, it can be used without any issues cross browsers.
+<br />
+<img width="180" alt="screenshot" src="https://github.com/enesergun/ricky-and-morty-typescript/assets/63712936/3fee54ca-aa8a-4d2d-a5a2-ad169b5675fb">
+<img width="180" alt="Screenshot 2023-12-28 at 03 06 31" src="https://github.com/enesergun/ricky-and-morty-typescript/assets/63712936/20218afa-4c4e-41be-94fd-56190db4dffb">
+<br />
+<img width="466" alt="Screenshot 2023-12-28 at 03 06 12" src="https://github.com/enesergun/ricky-and-morty-typescript/assets/63712936/6827d0c9-0bbb-4909-b05a-aecf24816b91">
+<img width="466" alt="Screenshot 2023-12-28 at 03 06 01" src="https://github.com/enesergun/ricky-and-morty-typescript/assets/63712936/8b7481cd-61e6-4081-89a5-f4b911ce93d8">
+
+## Good FCP, SI, LCP, TBT, CLS Scores
+
+Following the analysis conducted with Lighthouse, we observe high scores in Performance, Accessibility, Best Practices, and SEO on the pages within the project.
+
+### For example,
+
+- Single Location Page ( Mobile ) 
+
+<img width="426" alt="Screenshot 2023-12-28 at 03 22 07" src="https://github.com/enesergun/ricky-and-morty-typescript/assets/63712936/83017335-28bc-4431-b2d4-264abeb7f91c">
+
+- Character List Page ( Desktop ) 
+
+<img width="426" alt="Screenshot 2023-12-28 at 03 24 46" src="https://github.com/enesergun/ricky-and-morty-typescript/assets/63712936/26be231f-e85d-41d7-ae67-4e3bee92d4fc">
+
+### On the other hand, the Cumulative Layout Shift (CLS) scores on all pages are less than 0.0.
+
+- Character List Page ( Mobile )
+<img width="526" alt="image" src="https://github.com/enesergun/ricky-and-morty-typescript/assets/63712936/d32d97b0-503c-449e-bd1b-aa1bc721ad01">
+
+- Location List Page ( Desktop ) 
+<img width="526" alt="image" src="https://github.com/enesergun/ricky-and-morty-typescript/assets/63712936/664a44e7-3463-443c-8633-1af3977b13a4">
+
+- Character Detail Page ( Mobile )
+<img width="526" alt="image" src="https://github.com/enesergun/ricky-and-morty-typescript/assets/63712936/38bdaf7d-22c2-4d62-9311-1bb69ad80e59">
+
+## Setup 
 First, run the development server:
 
 ```bash
@@ -15,26 +75,3 @@ bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
