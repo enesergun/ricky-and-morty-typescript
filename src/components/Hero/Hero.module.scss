@@ -13,13 +13,13 @@
     width: 50%;
     text-align: center;
     @include media-breakpoint-up(sm) {
-      width: 45%;
+      width: 40%;
     }
     @include media-breakpoint-up(md) {
-      width: 35%;
+      width: 25%;
     }
     @include media-breakpoint-up(lg) {
-      width: 25%;
+      width: 20%;
     }
     .image {
       object-fit: contain;

@@ -1,10 +1,13 @@
+## Rick And Morty
 
+This project has been developed using the [Rick And Morty API](https://rickandmortyapi.com/) with Next.js.
 
-## Rick And Morty 
+## Live
 
-This project has been developed using the Rick And Morty API with Next.js.
+Click [here](https://ricky-and-morty-typescript.vercel.app/) to go to the live demo.
 
 ## Visitor Stories
+
 Users can perform the following actions in this application:
 
 - View a list of all locations and all characters with a page structure,
@@ -17,6 +20,7 @@ Users can perform the following actions in this application:
 - View characters added to favorites on the "my favorites" page.
 
 ## Technologies
+- Typescript
 - Nextjs
 - API Routes
 - Redux-toolkit
@@ -42,11 +46,11 @@ Following the analysis conducted with Lighthouse, we observe high scores in Perf
 
 ### For example,
 
-- Single Location Page ( Mobile ) 
+- Single Location Page ( Mobile )
 
 <img width="426" alt="Screenshot 2023-12-28 at 03 22 07" src="https://github.com/enesergun/ricky-and-morty-typescript/assets/63712936/83017335-28bc-4431-b2d4-264abeb7f91c">
 
-- Character List Page ( Desktop ) 
+- Character List Page ( Desktop )
 
 <img width="426" alt="Screenshot 2023-12-28 at 03 24 46" src="https://github.com/enesergun/ricky-and-morty-typescript/assets/63712936/26be231f-e85d-41d7-ae67-4e3bee92d4fc">
 
@@ -61,7 +65,8 @@ Following the analysis conducted with Lighthouse, we observe high scores in Perf
 - Character Detail Page ( Mobile )
 <img width="526" alt="image" src="https://github.com/enesergun/ricky-and-morty-typescript/assets/63712936/38bdaf7d-22c2-4d62-9311-1bb69ad80e59">
 
-## Setup 
+## Setup
+
 First, run the development server:
 
 ```bash
